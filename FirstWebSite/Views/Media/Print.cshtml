@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Print";
+}
+
+
+<link rel="stylesheet" type="text/css" href="https://printjs-4de6.kxcdn.com/print.min.css">
+
+<h2>Print</h2>
+<p>Hi from print page</p>
+
+<div id="PrintMe">
+    <p>
+        Some text.
+    </p>
+    </div>
+
+<button type="button" onclick="printJS('PrintMe', 'html')">
+    Print Form
+</button>
+
+<button type="button" onclick="DoImages()">Print Image</button>
+
+@section scripts{
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
+    <script>
+        function DoImages()
+        {
+            printJS({
+                printable: ['https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png', 'https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9', 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop'],
+                type: 'image',
+                header: 'I love Pussy',
+                imageStyle: 'width:50%;margin-bottom:20px;'
+            })
+
+        }
+
+
+    </script>
+
+}
